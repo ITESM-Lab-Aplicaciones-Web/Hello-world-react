@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Task from "./components/Task";
+import CreateTask from "./components/CreateTask";
+import { tasks } from "./tasks";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const onDelete = () => {
+    console.log("Hola");
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1 className="">Lista de tareas</h1>
+      <CreateTask />
+      <Task tasks={tasks} delete={onDelete} />
+    </>
   );
 }
 
